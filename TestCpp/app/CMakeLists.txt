@@ -21,10 +21,8 @@ add_library( # Sets the name of the library.
 
              # Provides a relative path to your source file(s).
              src/main/cpp/native-lib.cpp
-             src/main/cpp/JSONPathFinder.cpp
-             src/main/cpp/native-lib.cpp
              src/main/cpp/googletest/src/gtest-all.cc
-	     src/main/cpp/Tests.cpp
+	         src/main/cpp/Tests.cpp
               )
 
 # Searches for a specified prebuilt library and stores the path as a
