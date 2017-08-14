@@ -91,4 +91,4 @@ results back into its own STDOUT channel.
 
 ## Design
 
-
+![Android Google Test Driver](android_gtest_driver.png)
