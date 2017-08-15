@@ -85,7 +85,7 @@ driver program keeps track of test results by scanning adb logs.
 
 ## Design
 
-![Android Google Test Driver](android_gtest_driver.png)
+![Android Google Test Driver](imgs/android_gtest_driver.png)
 
 ### Input to Google Test Run
 
@@ -112,6 +112,6 @@ the following steps:
 
 ### Sample Runs
 
-![Listing Test Cases](gtest_sample_list_tests.png)
+![Listing Test Cases](imgs/gtest_sample_list_tests.png)
 
-![Running Test Cases](gtest_sample_run.png)
+![Running Test Cases](imgs/gtest_sample_run.png)
