@@ -89,23 +89,23 @@ driver program keeps track of test results by scanning adb logs.
 The input from console to Google Test runtime inside the app is
 handled by the following steps:
 
-...1 Test driver (gtest.py) takes the test command line params.
-...2 A broadcast intent (GTEST_CMD) with those parameters as intent extra is sent via ADB to the device
-...3 The broadcast is received at the app's GTest Driver receiver.
-...4 The test parameters are extracted from the intent.
-...5 The native Google test run (a JNI call) is initiated by initializing gtest for the supplied parameters.
+1. Test driver (gtest.py) takes the test command line params.
+2. A broadcast intent (GTEST_CMD) with those parameters as intent extra is sent via ADB to the device
+3. The broadcast is received at the app's GTest Driver receiver.
+4. The test parameters are extracted from the intent.
+5. The native Google test run (a JNI call) is initiated by initializing gtest for the supplied parameters.
 
 ### Output from Google Test Run
 
 The putput from the Google Test is delivered to console by the
 following steps:
 
-...1 The Google test runtime generates results on the app process's STDOUT channel.
-...2 The STDOUT of the process is funnelled via a PIPE to a new FILE handle. 
-...3 Input stream from the PIPE is put into Android logs (by a worker thread, AppStdoutPump).
-...4 The ADB gets the logs from the device to the test driver (gtest.py).
-...5 The driver monitors the start and the end of Google Test specific logs.
-...6 The driver outputs the results to its own STDOUT channel.
+1. The Google test runtime generates results on the app process's STDOUT channel.
+2. The STDOUT of the process is funnelled via a PIPE to a new FILE handle. 
+3. Input stream from the PIPE is put into Android logs (by a worker thread, AppStdoutPump).
+4. The ADB gets the logs from the device to the test driver (gtest.py).
+5. The driver monitors the start and the end of Google Test specific logs.
+6. The driver outputs the results to its own STDOUT channel.
 
 ## Design
 
