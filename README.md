@@ -110,3 +110,8 @@ the following steps:
 5. The driver monitors the start and the end of Google Test specific logs.
 6. The driver outputs the results to its own STDOUT channel.
 
+### Sample Runs
+
+![Listing Test Cases](gtest_sample_list_tests.png)
+
+![Running Test Cases](gtest_sample_run.png)
