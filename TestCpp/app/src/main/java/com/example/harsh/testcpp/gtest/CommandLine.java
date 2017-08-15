@@ -16,7 +16,7 @@
  *
  */
 
-package com.example.harsh.testcpp;
+package com.example.harsh.testcpp.gtest;
 
 import java.util.ArrayList;
 import java.util.StringTokenizer;

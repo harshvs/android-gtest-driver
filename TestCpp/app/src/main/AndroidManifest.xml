@@ -18,7 +18,7 @@
         </activity>
 
         <receiver
-            android:name=".GTestDriverReceiver"
+            android:name=".gtest.GTestDriverReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter android:priority="999">

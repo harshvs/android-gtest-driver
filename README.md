@@ -3,7 +3,7 @@ Google Test for NDK based Android Apps
 
 Here we have a sample NDK based Android project and a python script to
 show the integration of the [Google
-Tests]((https://github.com/google/googletest)) to run native (C++)
+Tests](https://github.com/google/googletest) to run native (C++)
 instrumented unit tests.
 
 ## Background & Rationale
@@ -51,7 +51,7 @@ writing/maintaining test cases.
 
 The tooling support for writing/maintaining instrumented C++ unit tests
 seems absent for Android.  Here we may choose to hand-craft
-instrumentation tests but that effort won't scale in coxmparison to
+instrumentation tests but that effort won't scale in comparison to
 using an industry standard testing framework like Google Test. 
 
 Google Test is a popular open sourced xUnit based C++ testing

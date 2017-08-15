@@ -12,7 +12,7 @@ gtestDriverIntentName = "com.example.harsh.testcpp.intent.GTEST_CMD"
 def scanLogcat():
     adbCmd = "adb logcat | grep APP_STDOUT"
     # p = subprocess.Popen(adbCmd, stdout=subprocess.PIPE, bufsize=0, shell=True)
-    p = subprocess.Popen(["/usr/bin/adb", "logcat"], stdout=subprocess.PIPE, bufsize=0, shell=False)
+    p = subprocess.Popen(["adb", "logcat"], stdout=subprocess.PIPE, bufsize=0, shell=False)
     startMark = "GTest_Start:" + runId
     endMark = "GTest_End:" + runId
     gtestLogMark = "APP_STDOUT"

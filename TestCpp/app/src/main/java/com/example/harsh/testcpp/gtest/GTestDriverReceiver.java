@@ -1,4 +1,4 @@
-package com.example.harsh.testcpp;
+package com.example.harsh.testcpp.gtest;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

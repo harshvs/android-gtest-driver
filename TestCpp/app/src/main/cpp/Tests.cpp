@@ -32,3 +32,13 @@ TEST(Case2, Test3)
 {
     EXPECT_TRUE(true);
 }
+
+TEST(Case3, Test1)
+{
+    EXPECT_TRUE(true);
+}
+
+TEST(Case3, Test2)
+{
+    EXPECT_TRUE(false);
+}
