@@ -1,14 +1,12 @@
 # android-gtest-driver
 Google Test for NDK based Android Apps
 
-## Introduction
-
 Here we have a sample NDK based Android project and a python script to
 show integration of the [Google
 Tests]((https://github.com/google/googletest)) to run native (C++)
 instrumented unit tests.
 
-## Rationale
+## Background & Rationale
 
 The Unit testing of the shared native (C++) modules typically requires
 a large overhead of extracting/maintaining/running the modules outside
