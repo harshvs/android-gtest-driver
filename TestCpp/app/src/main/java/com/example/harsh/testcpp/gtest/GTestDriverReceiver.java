@@ -14,10 +14,10 @@ public class GTestDriverReceiver extends BroadcastReceiver {
         String gtestCmd = intent.getStringExtra("cmd");
         boolean onMainThread = intent.getBooleanExtra("mainlooper", false);
         if (onMainThread) {
-            Log.e(LOG_TAG, "onReceiver: Scheduling tests with:" + gtestCmd);
+            Log.i(LOG_TAG, "onReceiver: Scheduling tests with:" + gtestCmd);
             GTestDriver.runGTests(gtestCmd);
         } else {
-            Log.e(LOG_TAG, "onReceiver: Executing test with" + gtestCmd);
+            Log.i(LOG_TAG, "onReceiver: Executing test with" + gtestCmd);
             GTestDriver.scheduleGTests(gtestCmd);
         }
     }
