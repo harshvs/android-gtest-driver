@@ -30,7 +30,7 @@ void pumpStdoutToLog() {
     while (true) {
         c = fgetc(exitEndFd);
         if (c == '\n' || c == EOF) {
-            __android_log_print(ANDROID_LOG_INFO, "APP_STDOUT", "%s", outStm.str().c_str());
+            __android_log_print(ANDROID_LOG_ERROR, "APP_STDOUT", "%s", outStm.str().c_str());
             outStm.str("");
         } else {
             outStm << (char) c;

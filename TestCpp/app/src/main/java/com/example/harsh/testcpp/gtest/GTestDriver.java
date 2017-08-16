@@ -12,7 +12,7 @@ public class GTestDriver {
     private static final String LOG_TAG = "GTestDriver";
 
     public static void scheduleGTests(final String gtestCmdLine) {
-        Log.i(LOG_TAG, "Scheduling tests on a worker thread.");
+        Log.e(LOG_TAG, "Scheduling tests on a worker thread.");
         AsyncTask.THREAD_POOL_EXECUTOR.execute(new Runnable() {
             @Override
             public void run() {
@@ -27,7 +27,7 @@ public class GTestDriver {
         try {
             String[] args = CommandLine.translate("GTestDriver " + gtestCmdLine);
             int result = g.runGTestsNative(args);
-            Log.i(LOG_TAG, "runGTests returned:" + result);
+            Log.e(LOG_TAG, "runGTests returned:" + result);
         } catch (Exception ex) {
             Log.e(LOG_TAG, "Error running GTest. Ex:" + ex.toString());
         }
