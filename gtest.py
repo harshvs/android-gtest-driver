@@ -22,20 +22,18 @@ packageName = "com.example.harsh.testcpp"
 gtestDriverIntentName = "com.example.harsh.testcpp.intent.GTEST_CMD"
 
 def scanLogcat():
-    adbCmd = "adb logcat | grep APP_STDOUT"
-    # p = subprocess.Popen(adbCmd, stdout=subprocess.PIPE, bufsize=0, shell=True)
+    adbCmd =  adbPath + " logcat | grep APP_STDOUT"
     p = subprocess.Popen([adbPath, "logcat"], stdout=subprocess.PIPE, bufsize=0, shell=False)
     startMark = "GTest_Start:" + runId
     endMark = "GTest_End:" + runId
-    gtestLogMark = "APP_STDOUT"
+    gtestLogMark = "APP_STDOUT:"
+    sizeOfLogMark = len(gtestLogMark)
     # print startMark + " -- > " + endMark
     while True:
         line = p.stdout.readline()
-        # print line
         if startMark in line:
             break
     while True:
-        # print "."
         line = p.stdout.readline()
         if gtestLogMark not in line:
             continue
@@ -44,7 +42,7 @@ def scanLogcat():
         if "referenceTable " in line:
             continue
         # Skip log prefix and newline
-        line = line[line.index("APP_STDOUT:") + 12 :-1]
+        line = line[line.index(gtestLogMark) + sizeOfLogMark + 1 :-1]
         # Put term colors
         if "[  FAILED  ]" in line:
             line = line.replace("[  FAILED  ]", bcolors.FAIL + "[  FAILED  ]" + bcolors.ENDC)
@@ -61,7 +59,6 @@ FNULL = open(os.devnull, 'w')
 call([adbPath,"shell", "am", "force-stop", packageName], stdout=FNULL, stderr=subprocess.STDOUT)
 call([adbPath, "shell", "monkey", "-p",packageName, "1"], stdout=FNULL, stderr=subprocess.STDOUT)
 time.sleep(1)
-# print ' '.join([adbPath,"shell", "am", "broadcast", "-a", gtestDriverIntentName, "--es", "cmd", "\"" + ' '.join(sys.argv) + " " + runId + "\""])
 call([adbPath,"shell", "am", "broadcast", "-a", gtestDriverIntentName, "--es", "cmd", "\"" + ' '.join(sys.argv) + " " + runId + "\""], stdout=FNULL, stderr=subprocess.STDOUT)
 scanLogcat()
 
